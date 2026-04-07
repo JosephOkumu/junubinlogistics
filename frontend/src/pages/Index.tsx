@@ -109,7 +109,7 @@ const Index = () => {
             <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-black text-foreground mt-2">Our Services</h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              End-to-end logistics solutions tailored to your business needs
+              Looking for dependable transport and logistics solutions in Africa?
             </p>
           </div>
           <div className="space-y-20">
