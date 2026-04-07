@@ -191,12 +191,13 @@ const Index = () => {
           <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">
             Get a free quote today and let us handle your logistics needs with precision and care.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent-red-dark text-accent-red-foreground font-bold text-lg hover:bg-accent-red transition-colors"
-          >
-            Request a Quote <ArrowRight className="w-5 h-5" />
-          </Link>
+          <QuoteDialog>
+            <button
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent-red-dark text-accent-red-foreground font-bold text-lg hover:bg-accent-red transition-colors"
+            >
+              Request a Quote <ArrowRight className="w-5 h-5" />
+            </button>
+          </QuoteDialog>
         </div>
       </section>
     </Layout>
