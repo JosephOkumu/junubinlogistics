@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-gradient-dark py-20">
+      <section className="bg-black py-20">
         <div className="container mx-auto px-4 text-center">
           <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
           <h1 className="text-4xl md:text-5xl font-black text-primary-foreground mt-3 mb-4">Contact Us</h1>
