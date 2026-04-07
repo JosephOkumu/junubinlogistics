@@ -23,10 +23,10 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-black text-foreground mb-6">Our Story</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Junubin Logistics was founded with a simple yet powerful vision: to bridge the gap in transport and logistics services across Africa. Starting from humble beginnings, we have grown into a trusted name in the industry, serving businesses and individuals across more than 30 countries.
+              We are a leading East African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our name "Junubin" — meaning "Southerner" — reflects our deep roots in the African continent and our commitment to connecting communities through reliable, efficient logistics. Today we operate a comprehensive fleet, modern warehouses, and an extensive partner network that enables us to deliver world-class service.
+              We offer tailor-made logistics services, handling all types of cargo to and from any destination within East Africa.
             </p>
           </div>
         </div>
@@ -36,15 +36,16 @@ const About = () => {
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: Target, title: "Our Mission", text: "To provide efficient, reliable, and cost-effective logistics solutions that empower businesses to grow and thrive in global markets." },
-            { icon: Eye, title: "Our Vision", text: "To be Africa's most trusted logistics partner, connecting the continent to the world through innovation and excellence." },
-            { icon: Heart, title: "Our Values", text: "Integrity, reliability, customer-centricity, innovation, and a commitment to building long-term partnerships with every client we serve." },
+            { icon: Target, title: "Our Mission", subtitle: "Connecting Your Products to the World", text: "We exist to bridge distances and simplify trade across East Africa. Through efficient coordination, strong partnerships, and a proactive team, we ensure goods move smoothly from origin to destination with precision and care." },
+            { icon: Eye, title: "Our Vision", subtitle: "Your Cargo, Fast Forward.", text: "Our vision is to set the benchmark for speed, reliability, and resilience in logistics. Even in times of uncertainty, we remain adaptable and solution-oriented, ensuring that your cargo continues its journey without interruption." },
+            { icon: Heart, title: "Our Purpose", subtitle: "Relieving Your Logistics Burden", text: "We understand that logistics can be complex and demanding. Our purpose is to remove that complexity by offering expert guidance, transparent communication, and dependable service—delivering exactly what we promise, every time." },
           ].map((item) => (
             <div key={item.title} className="bg-card rounded-xl p-8 shadow-card border border-border text-center">
               <div className="w-14 h-14 rounded-full bg-accent-red/10 flex items-center justify-center mx-auto mb-5">
                 <item.icon className="w-7 h-7 text-accent-red" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+              <p className="font-semibold text-foreground text-sm mb-3">{item.subtitle}</p>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
             </div>
           ))}
