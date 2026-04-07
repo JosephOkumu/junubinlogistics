@@ -163,7 +163,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Globe, title: "Global Reach", desc: "Connecting you to over 30 countries with a vast logistics network." },
+              { icon: Globe, title: "East African Reach", desc: "Connecting you seamlessly across East Africa with an integrated and extensive localized network." },
               { icon: Shield, title: "Secure & Insured", desc: "Your cargo is fully insured and handled with the highest standards." },
               { icon: Clock, title: "On-Time Delivery", desc: "98% on-time delivery rate with real-time shipment tracking." },
               { icon: Users, title: "Dedicated Support", desc: "24/7 customer support with a personal logistics coordinator." },
