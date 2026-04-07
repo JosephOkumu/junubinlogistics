@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { label: "Home", path: "/" },
-                { label: "Our Services", path: "/services" },
+                { label: "Our Services", path: "/#services" },
                 { label: "About Us", path: "/about" },
                 { label: "Contact Us", path: "/contact" },
               ].map((link) => (
@@ -42,7 +42,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              {["Cargo Transport", "Clearing & Forwarding", "Sea Freight", "Storage & Warehousing", "Express & Parcels", "Air Freight"].map((s) => (
+              {["Cargo Transport", "Clearing & Forwarding", "Sea Freight", "Storage & Warehousing", "Express Parcels", "Air Freight"].map((s) => (
                 <li key={s} className="flex items-center gap-1">
                   <ArrowRight className="w-3 h-3" />
                   {s}

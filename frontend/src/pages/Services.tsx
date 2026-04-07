@@ -35,7 +35,7 @@ const services = [
     features: ["Climate Control", "Inventory Management", "24/7 Security", "Flexible Terms"],
   },
   {
-    title: "Express & Parcels",
+    title: "Express Parcels",
     desc: "When speed matters most, our express delivery service ensures your parcels reach their destination on time, every time. From same-day delivery to next-day services, we offer flexible solutions for time-sensitive shipments.",
     img: expressImg,
     features: ["Same-Day Delivery", "Next-Day Service", "Real-Time Tracking", "Signature Confirmation"],

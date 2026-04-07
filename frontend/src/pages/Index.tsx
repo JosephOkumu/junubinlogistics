@@ -40,7 +40,7 @@ const services = [
     features: ["Climate Control", "Inventory Management", "24/7 Security", "Flexible Terms"],
   },
   {
-    title: "Express & Parcels",
+    title: "Express Parcels",
     desc: "When speed matters most, our express delivery service ensures your parcels reach their destination on time, every time. From same-day delivery to next-day services, we offer flexible solutions for time-sensitive shipments.",
     img: expressImg,
     features: ["Same-Day Delivery", "Next-Day Service", "Real-Time Tracking", "Signature Confirmation"],
@@ -103,7 +103,7 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-20 bg-secondary scroll-mt-16">
+      <section id="services" className="py-20 bg-secondary scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">What We Offer</span>
@@ -150,14 +150,6 @@ const Index = () => {
                 </div>
               </ScrollReveal>
             ))}
-          </div>
-          <div className="text-center mt-14">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary-dark transition-colors"
-            >
-              View All Services <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>

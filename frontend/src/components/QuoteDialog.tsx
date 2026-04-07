@@ -57,7 +57,7 @@ const QuoteDialog = ({ children }: QuoteDialogProps) => {
             <option value="clearing">Clearing & Forwarding</option>
             <option value="sea">Sea Freight</option>
             <option value="warehouse">Storage & Warehousing</option>
-            <option value="express">Express & Parcels</option>
+            <option value="express">Express Parcels</option>
             <option value="air">Air Freight</option>
           </select>
           <Textarea
