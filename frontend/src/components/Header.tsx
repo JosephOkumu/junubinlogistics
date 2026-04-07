@@ -45,7 +45,7 @@ const Header = () => {
             </Link>
           ))}
           <QuoteDialog>
-            <button className="ml-3 px-5 py-2 rounded-md text-sm font-semibold bg-accent-red text-accent-red-foreground hover:bg-accent-red-dark transition-colors">
+            <button className="ml-3 px-5 py-2 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red transition-colors">
               Get a Quote
             </button>
           </QuoteDialog>
@@ -80,7 +80,7 @@ const Header = () => {
             <QuoteDialog>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-5 py-3 rounded-md text-sm font-semibold bg-accent-red text-accent-red-foreground text-center"
+                className="mt-2 px-5 py-3 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red text-center"
               >
                 Get a Quote
               </button>

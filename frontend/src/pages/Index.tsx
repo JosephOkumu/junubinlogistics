@@ -88,7 +88,7 @@ const Index = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-accent-red text-accent-red-foreground font-semibold hover:bg-accent-red-dark transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors"
               >
                 Our Services <ArrowRight className="w-4 h-4" />
               </a>
@@ -141,7 +141,7 @@ const Index = () => {
                         ))}
                       </div>
                       <QuoteDialog>
-                        <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent-red text-accent-red-foreground font-semibold hover:bg-accent-red-dark transition-colors">
+                        <button className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors">
                           Get a Quote <ArrowRight className="w-4 h-4" />
                         </button>
                       </QuoteDialog>
@@ -193,7 +193,7 @@ const Index = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent-red text-accent-red-foreground font-bold text-lg hover:bg-accent-red-dark transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-accent-red-dark text-accent-red-foreground font-bold text-lg hover:bg-accent-red transition-colors"
           >
             Request a Quote <ArrowRight className="w-5 h-5" />
           </Link>

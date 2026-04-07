@@ -69,7 +69,7 @@ const QuoteDialog = ({ children }: QuoteDialogProps) => {
           />
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-accent-red text-accent-red-foreground font-semibold hover:bg-accent-red-dark transition-colors"
+            className="w-full py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors"
           >
             Submit Request
           </button>

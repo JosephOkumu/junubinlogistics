@@ -94,7 +94,7 @@ const Contact = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-accent-red text-accent-red-foreground font-semibold hover:bg-accent-red-dark transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors"
                 >
                   <Send className="w-4 h-4" />
                   Send Message
