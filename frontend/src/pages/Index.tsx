@@ -82,8 +82,8 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
               Moving Your World, One Shipment at a Time
             </h1>
-            <p className="text-lg text-white/80 mb-8 leading-relaxed max-w-lg">
-              Junubin Logistics delivers comprehensive transport and logistics solutions connecting Africa to the world with speed, reliability, and care.
+            <p className="text-lg font-bold text-white/80 mb-8 leading-relaxed max-w-lg">
+              Junubin Logistics delivers comprehensive transport and logistics solutions connecting East Africa with speed, reliability, and care.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
