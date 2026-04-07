@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <img src={logo} alt="Junubin Logistics" className="h-14 w-auto mb-4" />
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Delivering excellence across borders. Your trusted partner for seamless logistics solutions throughout Africa and beyond.
+              We deliver as promised. Your trusted partner for seamless logistics solutions throughout Africa and beyond.
             </p>
           </div>
 
