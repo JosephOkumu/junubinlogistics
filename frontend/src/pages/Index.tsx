@@ -80,10 +80,10 @@ const Index = () => {
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-2xl animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-              Moving Your World, One Shipment at a Time
+              Reliable Transport & Logistics Services Across East Africa.
             </h1>
             <p className="text-lg font-bold text-white/80 mb-8 leading-relaxed max-w-lg">
-              Junubin Logistics delivers comprehensive transport and logistics solutions connecting East Africa with speed, reliability, and care.
+              We are a leading East African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
