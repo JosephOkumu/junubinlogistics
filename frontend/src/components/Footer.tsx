@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ArrowRight, Facebook, Instagram } from "lucide-react";
-import logo from "@/assets/logo.png";
+
 
 const Footer = () => {
   return (
@@ -9,7 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Junubin Logistics" className="h-14 w-auto mb-4" />
+            <Link to="/" className="text-2xl font-black text-primary-foreground mb-4 block">
+              Junubin Logistics
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We deliver as promised. Your trusted partner for seamless logistics solutions throughout Africa and beyond.
             </p>
