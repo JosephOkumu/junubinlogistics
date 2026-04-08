@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import QuoteDialog from "@/components/QuoteDialog";
@@ -49,11 +50,24 @@ const services = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal-on-scroll").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}
       <section className="bg-gradient-dark py-20">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center reveal-on-scroll animate-fade-in-up">
           <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">What We Do</span>
           <h1 className="text-4xl md:text-5xl font-black text-primary-foreground mt-3 mb-4">Our Services</h1>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto">
@@ -68,7 +82,8 @@ const Services = () => {
           {services.map((svc, i) => (
             <div
               key={svc.title}
-              className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center`}
+              className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center reveal-on-scroll ${i % 2 === 0 ? "animate-slide-in-left" : "animate-slide-in-right"
+                }`}
             >
               <div className="flex-1">
                 <img
@@ -105,7 +120,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-16">
+      <section className="bg-primary py-16 reveal-on-scroll animate-fade-in">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-primary-foreground mb-4">Need a Custom Solution?</h2>
           <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">
