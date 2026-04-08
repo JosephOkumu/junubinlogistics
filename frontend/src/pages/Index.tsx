@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import { useScrollAnimate } from "@/hooks/use-scroll-animate";
 import heroImg from "@/assets/hero-logistics.jpg";
 import heroNightImg from "@/assets/hero-night-logistics.jpg";
-import heroDarkImg from "@/assets/hero-dark-containers.jpg";
 import HeroSlider from "@/components/HeroSlider";
 import QuoteDialog from "@/components/QuoteDialog";
 import cargoImg from "@/assets/services-cargo.jpg";
@@ -75,7 +74,7 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <HeroSlider images={[heroImg, heroNightImg, heroDarkImg]} />
+        <HeroSlider images={[heroImg, heroNightImg]} />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-2xl animate-fade-in-up">
