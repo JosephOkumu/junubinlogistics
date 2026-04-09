@@ -105,7 +105,18 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between text-xs text-primary-foreground/50">
           <p>&copy; {new Date().getFullYear()} Junubin Logistics. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Connecting Africa to the World</p>
+          <p className="mt-2 md:mt-0">
+            Design by:{" "}
+            <a
+              href="https://larscooper.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground transition-colors underline decoration-primary/30 underline-offset-4"
+            >
+              O. Otieno from larscooper
+            </a>
+          </p>
+          <p className="mt-2 md:mt-0 font-medium tracking-wide">Connecting Africa to the World</p>
         </div>
       </div>
     </footer>
