@@ -115,7 +115,8 @@ const Index = () => {
             {services.map((svc, i) => (
               <ScrollReveal key={svc.title} delay={0.1}>
                 <div
-                  className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center`}
+                  id={svc.title.toLowerCase().replace(/\s+/g, "-")}
+                  className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center scroll-mt-24`}
                 >
                   <div className="flex-1">
                     <img

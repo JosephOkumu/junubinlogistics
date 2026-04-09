@@ -45,9 +45,14 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               {["Cargo Transport", "Clearing & Forwarding", "Sea Freight", "Storage & Warehousing", "Express Parcels", "Air Freight"].map((s) => (
-                <li key={s} className="flex items-center gap-1">
-                  <ArrowRight className="w-3 h-3" />
-                  {s}
+                <li key={s}>
+                  <Link
+                    to={`/#${s.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="flex items-center gap-1 hover:text-primary-foreground transition-colors group"
+                  >
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    {s}
+                  </Link>
                 </li>
               ))}
             </ul>
