@@ -3,8 +3,6 @@ import { Target, Eye, Heart } from "lucide-react";
 import Layout from "@/components/Layout";
 import teamAnthonyImg from "@/assets/Karanja.jpg";
 import teamPatrickImg from "@/assets/PatrickIARIE.jpg";
-import teamNjihiaImg from "@/assets/Njihia.jpg";
-import teamGichuhiImg from "@/assets/Gichuhi.jpg";
 import reliefLineLogo from "@/assets/relief-line-.png";
 import dishnetLogo from "@/assets/dishnet.png";
 import continentalLogo from "@/assets/continental-.jpg";
@@ -82,16 +80,14 @@ const About = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-black text-foreground text-center mb-14 animate-fade-in">Our Team</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-10 max-w-6xl mx-auto">
             {[
               { name: "Patrick Kiarie", role: "Director", img: teamPatrickImg, delay: "animate-delay-100" },
               { name: "Anthony Karanja", role: "Director", img: teamAnthonyImg, delay: "animate-delay-200" },
-              { name: "Anthony Njihia", role: "Head of Operations", img: teamNjihiaImg, delay: "animate-delay-300" },
-              { name: "Kenneth Gichuhi", role: "Deputy Head of Operations", img: teamGichuhiImg, delay: "animate-delay-200" },
             ].map((member, index) => (
               <div
                 key={member.name}
-                className={`text-center reveal-on-scroll ${index < 2 ? 'animate-slide-in-left' : 'animate-slide-in-right'
+                className={`text-center reveal-on-scroll ${index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
                   } ${member.delay}`}
               >
                 <div className="w-52 h-52 mx-auto mb-5 rounded-full overflow-hidden shadow-elevated border-4 border-primary/20">
