@@ -16,7 +16,7 @@ import airImg from "@/assets/services-air.jpg";
 const services = [
   {
     title: "Cargo Transport",
-    desc: "Our fleet of modern trucks ensures safe, timely delivery of your goods across East Africa. From full truckload to less-than-truckload shipments, we handle it all with precision and care. Our experienced drivers and advanced GPS tracking provide complete visibility throughout transit.",
+    desc: "Our fleet of modern trucks ensures safe, timely delivery of your goods across Eastern & Central Africa. From full truckload to less-than-truckload shipments, we handle it all with precision and care. Our experienced drivers and advanced GPS tracking provide complete visibility throughout transit.",
     img: cargoImg,
     features: ["Full & Partial Truckloads", "GPS Tracking", "Cross-border Transport", "Dedicated Fleet"],
   },
@@ -79,10 +79,10 @@ const Index = () => {
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-2xl animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
-              Reliable Transport & Logistics Services Across East Africa.
+              Reliable Transport & Logistics Services Across Eastern & Central Africa.
             </h1>
             <p className="text-lg font-bold text-white/80 mb-8 leading-relaxed max-w-lg">
-              We are a leading East African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
+              We are a leading Eastern & Central African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -162,7 +162,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Globe, title: "East African Reach", desc: "Connecting you seamlessly across East Africa with an integrated and extensive localized network." },
+              { icon: Globe, title: "Eastern & Central African Reach", desc: "Connecting you seamlessly across Eastern & Central Africa with an integrated and extensive localized network." },
               { icon: Shield, title: "Secure & Insured", desc: "Your cargo is fully insured and handled with the highest standards." },
               { icon: Clock, title: "On-Time Delivery", desc: "98% on-time delivery rate with real-time shipment tracking." },
               { icon: Users, title: "Dedicated Support", desc: "24/7 customer support with a personal logistics coordinator." },

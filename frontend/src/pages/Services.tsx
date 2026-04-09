@@ -13,7 +13,7 @@ import airImg from "@/assets/services-air.jpg";
 const services = [
   {
     title: "Cargo Transport",
-    desc: "Our fleet of modern trucks ensures safe, timely delivery of your goods across East Africa. From full truckload to less-than-truckload shipments, we handle it all with precision and care. Our experienced drivers and advanced GPS tracking provide complete visibility throughout transit.",
+    desc: "Our fleet of modern trucks ensures safe, timely delivery of your goods across Eastern & Central Africa. From full truckload to less-than-truckload shipments, we handle it all with precision and care. Our experienced drivers and advanced GPS tracking provide complete visibility throughout transit.",
     img: cargoImg,
     features: ["Full & Partial Truckloads", "GPS Tracking", "Cross-border Transport", "Dedicated Fleet"],
   },

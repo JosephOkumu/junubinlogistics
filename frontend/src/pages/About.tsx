@@ -45,10 +45,10 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-black text-foreground mb-6">Our Story</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We are a leading East African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
+              We are a leading Eastern & Central African logistics provider, delivering efficient, secure, and customized supply chain solutions across the region.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We offer tailor-made logistics services, handling all types of cargo to and from any destination within East Africa.
+              We offer tailor-made logistics services, handling all types of cargo to and from any destination within Eastern & Central Africa.
             </p>
           </div>
         </div>
@@ -58,7 +58,7 @@ const About = () => {
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: Target, title: "Our Mission", subtitle: "Connecting Your Products to the World", text: "We exist to bridge distances and simplify trade across East Africa. Through efficient coordination, strong partnerships, and a proactive team, we ensure goods move smoothly from origin to destination with precision and care.", delay: "animate-delay-100" },
+            { icon: Target, title: "Our Mission", subtitle: "Connecting Your Products to the World", text: "We exist to bridge distances and simplify trade across Eastern & Central Africa. Through efficient coordination, strong partnerships, and a proactive team, we ensure goods move smoothly from origin to destination with precision and care.", delay: "animate-delay-100" },
             { icon: Eye, title: "Our Vision", subtitle: "Your Cargo, Fast Forward.", text: "Our vision is to set the benchmark for speed, reliability, and resilience in logistics. Even in times of uncertainty, we remain adaptable and solution-oriented, ensuring that your cargo continues its journey without interruption.", delay: "animate-delay-200" },
             { icon: Heart, title: "Our Purpose", subtitle: "Relieving Your Logistics Burden", text: "We understand that logistics can be complex and demanding. Our purpose is to remove that complexity by offering expert guidance, transparent communication, and dependable service—delivering exactly what we promise, every time.", delay: "animate-delay-300" },
           ].map((item, index) => (
