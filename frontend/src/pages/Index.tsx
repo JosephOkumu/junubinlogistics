@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Sea Freight",
-    desc: "Cost-effective ocean freight services for FCL and LCL shipments worldwide. We partner with major shipping lines to offer competitive rates, reliable schedules, and door-to-door delivery for your international cargo.",
+    desc: "Cost-effective ocean freight services for FCL and LCL shipments connecting global ports to Eastern & Central Africa. We partner with major shipping lines to offer competitive rates, reliable schedules, and door-to-door delivery for your regional cargo.",
     img: seaImg,
     features: ["FCL & LCL Shipments", "Global Coverage", "Competitive Rates", "Door-to-Door"],
   },
@@ -46,7 +46,7 @@ const services = [
   },
   {
     title: "Air Freight",
-    desc: "For time-critical shipments, our air freight services provide the fastest possible transit times. We work with major airlines and cargo carriers to offer reliable, scheduled air cargo services to destinations worldwide.",
+    desc: "For time-critical shipments, our air freight services provide the fastest possible transit times between Eastern & Central Africa and global destinations. We work with major airlines and cargo carriers to offer reliable, scheduled air cargo services.",
     img: airImg,
     features: ["Express Air Cargo", "Charter Services", "Temperature Controlled", "Dangerous Goods"],
   },
