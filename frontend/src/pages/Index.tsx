@@ -107,8 +107,8 @@ const Index = () => {
           <div className="text-center mb-14">
             <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-black text-foreground mt-2">Our Services</h2>
-            <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              Looking for dependable transport and logistics solutions in Africa?
+            <p className="text-muted-foreground mt-3 max-w-xl mx-auto font-semibold tracking-wider text-sm">
+              We move it. We clear it. We deliver it.
             </p>
           </div>
           <div className="space-y-20">
