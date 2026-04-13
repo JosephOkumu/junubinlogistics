@@ -1,8 +1,14 @@
 import { useState } from "react";
+import globalEmailjs from "@emailjs/browser";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+
+// Note: You need to replace these placeholders with your actual EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_p1h5wr6";
+const EMAILJS_TEMPLATE_ID = "template_4ea23z8";
+const EMAILJS_PUBLIC_KEY = "eksbCdR_RBJK7d6Va";
 
 interface QuoteDialogProps {
   children: React.ReactNode;
@@ -10,13 +16,37 @@ interface QuoteDialogProps {
 
 const QuoteDialog = ({ children }: QuoteDialogProps) => {
   const [open, setOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Quote request sent! We'll get back to you shortly.");
-    setForm({ name: "", email: "", phone: "", service: "", message: "" });
-    setOpen(false);
+    setIsSending(true);
+
+    try {
+      await globalEmailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          reply_to: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+          to_email: "javezdenze@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Quote request sent! We'll get back to you shortly.");
+      setForm({ name: "", email: "", phone: "", service: "", message: "" });
+      setOpen(false);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send request. Please try again or contact us via WhatsApp.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -69,9 +99,10 @@ const QuoteDialog = ({ children }: QuoteDialogProps) => {
           />
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors"
+            disabled={isSending}
+            className="w-full py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit Request
+            {isSending ? "Sending..." : "Submit Request"}
           </button>
         </form>
       </DialogContent>

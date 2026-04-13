@@ -1,16 +1,50 @@
 import { useState } from "react";
+import globalEmailjs from "@emailjs/browser";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 
+// Note: You need to replace these placeholders with your actual EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_p1h5wr6";
+const EMAILJS_TEMPLATE_ID = "template_4ea23z8";
+const EMAILJS_PUBLIC_KEY = "eksbCdR_RBJK7d6Va";
+
 const Contact = () => {
   const { toast } = useToast();
+  const [isSending, setIsSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
-    setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    setIsSending(true);
+
+    try {
+      await globalEmailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          reply_to: form.email,
+          phone: form.phone,
+          subject: form.subject,
+          message: form.message,
+          to_email: "javezdenze@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error Sending Message",
+        description: "Please try again later or contact us via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -94,10 +128,11 @@ const Contact = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors"
+                  disabled={isSending}
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-accent-red-dark text-accent-red-foreground font-semibold hover:bg-accent-red transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
-                  Send Message
+                  {isSending ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
