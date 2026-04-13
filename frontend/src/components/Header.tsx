@@ -13,6 +13,7 @@ const navLinks = [
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => {
@@ -24,6 +25,9 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      {/* Render QuoteDialog at header level so it's never unmounted */}
+      <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
+
       {/* Main nav */}
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-3">
@@ -44,11 +48,12 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          <QuoteDialog>
-            <button className="ml-3 px-5 py-2 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red transition-colors">
-              Get a Quote
-            </button>
-          </QuoteDialog>
+          <button
+            onClick={() => setQuoteOpen(true)}
+            className="ml-3 px-5 py-2 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red transition-colors"
+          >
+            Get a Quote
+          </button>
         </nav>
 
         {/* Mobile toggle */}
@@ -77,14 +82,16 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <QuoteDialog>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 px-5 py-3 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red text-center"
-              >
-                Get a Quote
-              </button>
-            </QuoteDialog>
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                // Small delay to let the mobile menu close before opening dialog
+                setTimeout(() => setQuoteOpen(true), 50);
+              }}
+              className="mt-2 px-5 py-3 rounded-md text-sm font-semibold bg-accent-red-dark text-accent-red-foreground hover:bg-accent-red text-center w-full"
+            >
+              Get a Quote
+            </button>
           </div>
         </nav>
       )}

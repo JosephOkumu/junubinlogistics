@@ -11,11 +11,18 @@ const EMAILJS_TEMPLATE_ID = "template_4ea23z8";
 const EMAILJS_PUBLIC_KEY = "eksbCdR_RBJK7d6Va";
 
 interface QuoteDialogProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-const QuoteDialog = ({ children }: QuoteDialogProps) => {
-  const [open, setOpen] = useState(false);
+const QuoteDialog = ({ children, open: controlledOpen, onOpenChange: setControlledOpen }: QuoteDialogProps) => {
+  const [internalOpen, setInternalOpen] = useState(false);
+
+  // Support both controlled (from Header) and uncontrolled (with trigger children) modes
+  const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const setOpen = setControlledOpen ?? setInternalOpen;
+
   const [isSending, setIsSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
 
@@ -51,7 +58,7 @@ const QuoteDialog = ({ children }: QuoteDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+      {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl font-black">Get a Quote</DialogTitle>
