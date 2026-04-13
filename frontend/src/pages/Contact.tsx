@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import globalEmailjs from "@emailjs/browser";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -13,6 +13,19 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSending, setIsSending] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal-on-scroll").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +64,7 @@ const Contact = () => {
     <Layout>
       {/* Hero */}
       <section className="bg-black py-20">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center reveal-on-scroll animate-fade-in-up">
           <span className="text-accent-red font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
           <h1 className="text-4xl md:text-5xl font-black text-primary-foreground mt-3 mb-4">Contact Us</h1>
           <p className="text-primary-foreground/70 max-w-xl mx-auto">
@@ -63,7 +76,7 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           {/* Form */}
-          <div className="max-w-3xl mx-auto mb-14">
+          <div className="max-w-3xl mx-auto mb-14 reveal-on-scroll animate-fade-in-up animate-delay-100">
             <form onSubmit={handleSubmit} className="bg-card rounded-xl p-8 shadow-card border border-border space-y-5">
               <h3 className="text-2xl font-bold text-foreground mb-2 text-center">Send Us a Message</h3>
               <p className="text-muted-foreground text-sm text-center mb-4">
@@ -141,12 +154,15 @@ const Contact = () => {
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: MapPin, label: "Address", value: "Nairobi, Kenya" },
-              { icon: Phone, label: "Phone", value: "+254 140 557 871" },
-              { icon: Mail, label: "Email", value: "info@junubinlogistics.com" },
-              { icon: Clock, label: "Opening Hours", value: "Mon - Fri: 8:00 AM - 5:00 PM\nSat: 9:00 AM - 2:00 PM" },
-            ].map((item) => (
-              <div key={item.label} className="bg-card rounded-xl p-6 shadow-card border border-border text-center">
+              { icon: MapPin, label: "Address", value: "Nairobi, Kenya", delay: "animate-delay-100" },
+              { icon: Phone, label: "Phone", value: "+254 140 557 871", delay: "animate-delay-200" },
+              { icon: Mail, label: "Email", value: "info@junubinlogistics.com", delay: "animate-delay-300" },
+              { icon: Clock, label: "Opening Hours", value: "Mon - Fri: 8:00 AM - 5:00 PM\nSat: 9:00 AM - 2:00 PM", delay: "animate-delay-100" },
+            ].map((item, index) => (
+              <div
+                key={item.label}
+                className={`bg-card rounded-xl p-6 shadow-card border border-border text-center reveal-on-scroll ${index < 2 ? "animate-slide-in-left" : "animate-slide-in-right"} ${item.delay}`}
+              >
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
