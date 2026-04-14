@@ -4,11 +4,11 @@ import Layout from "@/components/Layout";
 import teamAnthonyImg from "@/assets/Karanja.jpg";
 import teamPatrickImg from "@/assets/PatrickIARIE.jpg";
 import reliefLineLogo from "@/assets/relief-line-.png";
-import dishnetLogo from "@/assets/dishnet.png";
 import continentalLogo from "@/assets/continental-.jpg";
-import rosewoodLogo from "@/assets/rosewood.png";
-import iomLogo from "@/assets/IOM.jpeg";
-import goSolarLogo from "@/assets/go-solar.jpeg";
+import danishLogo from "@/assets/danish.jpg";
+import davisLogo from "@/assets/davis.png";
+import redcrossLogo from "@/assets/redcross.png";
+import transafricaLogo from "@/assets/transafrica.png";
 
 const About = () => {
   useEffect(() => {
@@ -114,19 +114,19 @@ const About = () => {
           <h2 className="text-3xl font-black text-foreground text-center mb-14 reveal-on-scroll animate-fade-in">Our Clients</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 items-center justify-items-center">
             {[
-              { name: "GoSolar", img: goSolarLogo, url: null, delay: "animate-delay-100" },
+              { name: "Danish Refugee Council", img: danishLogo, url: "https://drc.ngo/en/", delay: "animate-delay-100" },
+              { name: "Davis & Shirtliff", img: davisLogo, url: "https://www.davisandshirtliff.com/", delay: "animate-delay-200" },
+              { name: "Kenya Red Cross", img: redcrossLogo, url: "https://redcross.or.ke/", delay: "animate-delay-300", className: "scale-150" },
+              { name: "TransAfrica Medical", img: transafricaLogo, url: "https://www.transafricamedical.co.ke/", delay: "animate-delay-100" },
               { name: "Relief Line", img: reliefLineLogo, url: "https://reliefline.net/", delay: "animate-delay-200" },
               { name: "Continental", img: continentalLogo, url: "https://continentalmed.com/", delay: "animate-delay-300" },
-              { name: "Rosewood", img: rosewoodLogo, url: "https://rosewood.co.ke/", delay: "animate-delay-100" },
-              { name: "IOM", img: iomLogo, url: "https://kenya.iom.int/", delay: "animate-delay-200" },
-              { name: "Dishnet", img: dishnetLogo, url: "https://dishnetafrica.com/", delay: "animate-delay-300" },
             ].map((client, index) => {
               const content = (
                 <div key={client.name} className={`hover:scale-110 transition-transform duration-300 flex items-center justify-center reveal-on-scroll ${index < 3 ? 'animate-slide-in-left' : 'animate-slide-in-right'} ${client.delay}`}>
                   <img
                     src={client.img}
                     alt={client.name}
-                    className="max-h-16 w-auto object-contain"
+                    className={`max-h-16 w-auto object-contain ${'className' in client ? client.className : ''}`}
                     loading="lazy"
                   />
                 </div>
