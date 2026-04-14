@@ -154,22 +154,56 @@ const Contact = () => {
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: MapPin, label: "Address", value: "Nairobi, Kenya", delay: "animate-delay-100" },
-              { icon: Phone, label: "Phone", value: "+254 140 557 871", delay: "animate-delay-200" },
-              { icon: Mail, label: "Email", value: "info@junubinlogistics.com", delay: "animate-delay-300" },
-              { icon: Clock, label: "Opening Hours", value: "Mon - Fri: 8:00 AM - 5:00 PM\nSat: 9:00 AM - 2:00 PM", delay: "animate-delay-100" },
-            ].map((item, index) => (
-              <div
-                key={item.label}
-                className={`bg-card rounded-xl p-6 shadow-card border border-border text-center reveal-on-scroll ${index < 2 ? "animate-slide-in-left" : "animate-slide-in-right"} ${item.delay}`}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-primary" />
+              {
+                icon: MapPin,
+                label: "Address",
+                value: "Pangani, Nairobi Kenya",
+                link: "https://www.google.com/maps/search/?api=1&query=JUNUBIN+LOGISTICS+PRHP%2BH2M+Losai+Rd+Nairobi",
+                delay: "animate-delay-100"
+              },
+              {
+                icon: Phone,
+                label: "Phone",
+                value: "+254 140 557 871",
+                link: "tel:+254140557871",
+                delay: "animate-delay-200"
+              },
+              {
+                icon: Mail,
+                label: "Email",
+                value: "info@junubinlogistics.com",
+                link: "mailto:info@junubinlogistics.com",
+                delay: "animate-delay-300"
+              },
+              {
+                icon: Clock,
+                label: "Opening Hours",
+                value: "Mon - Fri: 8:00 AM - 5:00 PM\nSat: 9:00 AM - 2:00 PM",
+                delay: "animate-delay-100"
+              },
+            ].map((item, index) => {
+              const content = (
+                <div
+                  className={`bg-card rounded-xl p-6 shadow-card border border-border text-center h-full hover:border-accent-red/30 transition-colors ${item.delay}`}
+                >
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-sm font-semibold text-foreground mb-1">{item.label}</div>
+                  <div className={`text-sm text-muted-foreground whitespace-pre-line ${item.link ? "group-hover:text-accent-red transition-colors" : ""}`}>{item.value}</div>
                 </div>
-                <div className="text-sm font-semibold text-foreground mb-1">{item.label}</div>
-                <div className="text-sm text-muted-foreground whitespace-pre-line">{item.value}</div>
-              </div>
-            ))}
+              );
+
+              return (
+                <div key={item.label} className={`reveal-on-scroll ${index < 2 ? "animate-slide-in-left" : "animate-slide-in-right"} group`}>
+                  {item.link ? (
+                    <a href={item.link} target={item.icon === MapPin ? "_blank" : undefined} rel={item.icon === MapPin ? "noopener noreferrer" : undefined}>
+                      {content}
+                    </a>
+                  ) : content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

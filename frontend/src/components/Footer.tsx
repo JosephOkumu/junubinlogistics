@@ -64,15 +64,26 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                Nairobi, Kenya
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=JUNUBIN+LOGISTICS+PRHP%2BH2M+Losai+Rd+Nairobi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  Pangani, Nairobi Kenya
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
-                +254 140 557 871
+                <a href="tel:+254140557871" className="hover:text-primary-foreground transition-colors">
+                  +254 140 557 871
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0" />
-                info@junubinlogistics.com
+                <a href="mailto:info@junubinlogistics.com" className="hover:text-primary-foreground transition-colors">
+                  info@junubinlogistics.com
+                </a>
               </li>
             </ul>
             {/* Social Media */}
